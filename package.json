@@ -1,0 +1,22 @@
+{
+  "name": "meanauth0appserverside",
+  "version": "1.0.0",
+  "description": "Back-end of the meanAuth0App application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Franklin Nunez",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "mongodb": "^3.0.3",
+    "mongoose": "^5.0.7",
+    "nodemailer": "^4.6.0",
+    "request": "^2.83.0"
+  }
+}

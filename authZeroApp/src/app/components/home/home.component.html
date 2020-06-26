@@ -1,0 +1,88 @@
+<h1>Welcome</h1><br><br>
+
+<div class="container">
+        <div class="alert alert-success" *ngIf="auth.isAuthenticated()">You are logged in</div>
+        <div class="alert alert-danger" *ngIf="!auth.isAuthenticated()">
+            You are not logged in! Please <a href="#" (click)="auth.login()">Log In</a> to continue.
+        </div>
+</div><br><br>
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Franklin Nunez</h5>
+          <p class="card-text">This is an authentication service application that uses the auth0 API system.</p>
+          <a href="#" class="btn btn-outline-info" type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Send Me Messege</a>
+          <br><br>
+          <p class="card-text"><small class="text-muted">Date: {{date}}</small></p>
+        </div>
+        <img class="card-img-bottom" src="../../../assets/pexels-photo-459654.jpeg" alt="Card image cap">
+      </div>
+
+      <br><br>
+      <div class="row">
+          <div class="col-md-8 col-sm-8">
+
+                    <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action active">
+                                    Technologies (MEAN)
+                            </a>
+                            <a href="https://www.mongodb.com/?_ga=2.223464594.802205854.1520303731-786867725.1520303731&_gac=1.190407129.1520303731.CjwKCAiA8vPUBRAyEiwA8F1oDO7ulBy64b_f7HHzx0hWq7YNKxZlof7aYbhtfL0jRA4lpq1VR-MERRoCfGoQAvD_BwE" class="list-group-item list-group-item-action" target="_blank">Mongo</a>
+                            <a href="https://expressjs.com/" class="list-group-item list-group-item-action" target="_blank">Expressjs</a>
+                            <a href="https://angularjs.org" class="list-group-item list-group-item-action" target="_blank">Angularjs</a>
+                            <a href="https://nodejs.org/en/" class="list-group-item list-group-item-action disabled" target="_blank">Nodejs</a>
+                          </div>
+          </div>
+          <div class="col-md-4 col-sm-4">
+                <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Other Resources</div>
+                        <div class="card-body">
+                          <h5 class="card-title">Open Source</h5>
+                          <p class="card-text">I also used Nodemailer, CORS, bootstrap and its dependencies for this porject.</p>
+                        </div>
+                      </div>
+          </div>
+      </div>
+      <br><br><br>
+
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+
+                  <form #emailForm="ngForm">
+                      <div class="alert alert-success" *ngIf="isSent()">
+                          {{msg?.msg}}
+                      </div>
+                      <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">Your Name:</label>
+                          <input type="text" class="form-control" id="name" [(ngModel)] = "name" name="name" >
+                        </div>
+                      <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">Your Email:</label>
+                          <input type="text" class="form-control" id="email" [(ngModel)] = "email" name="email" >
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Subject:</label>
+                            <input type="text" class="form-control" id="subject" [(ngModel)] = "subject" name="subject" >
+                          </div>
+                    <div class="form-group">
+                      <label for="message-text" class="col-form-label">Message:</label>
+                      <textarea class="form-control" id="message" [(ngModel)] = "message" name="message" ></textarea>
+                    </div>
+                  </form>
+                  
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" (click)="sendEmail(); emailForm.reset()">Send message</button>
+                </div>
+              </div>
+            </div>
+          </div>

@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+      <div class="offset-lg-12 col-lg-12 col-sm-12 col-12 main-section text-center">
+          <div class="row">
+              <div class="col-lg-12 col-sm-12 col-12 profile-header"></div>
+          </div>
+          <div class="row user-detail">
+              <div class="col-lg-12 col-sm-12 col-12">
+                  <img src="{{profile?.picture}}" class="rounded-circle img-thumbnail">
+                  <h5>{{user?.user.name}}</h5>
+                  <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{user?.user.address}}</p>
+
+                  <hr>
+                  <a href="#" class="btn btn-success btn-sm">Follow</a>
+                  <a href="#" class="btn btn-info btn-sm" type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Send Messege</a>
+
+                  <hr>
+                  <span><i class="fas fa-globe"></i> {{user?.user.country}}</span>
+                  <br>
+                  <span>Age: {{user?.user.age}}</span><br>
+                  <span>Gender: {{user?.user.gender}}</span><br>
+                  <span>Phone: {{user?.user.phone}}</span>
+
+              </div>
+          </div>
+          <div class="row user-social-detail">
+              <div class="col-lg-12 col-sm-12 col-12">
+                  <a href="#"><i class="fab fa-facebook-square fa-lg"></i></a>
+                  <a href="#"><i class="fab fa-google fa-lg"></i></a>
+                  <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+
